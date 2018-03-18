@@ -1,0 +1,80 @@
+li.readyToEat {
+  padding: .5em;
+  margin: .25em;
+  border-radius: 10em;
+  font-weight: bold;
+  height: 8em;
+  background-image: url("../img/burgerSmall.png");
+}
+
+li.devouredBurger {
+	padding: .15em;
+  margin: .15em;
+}
+
+#devourList {
+  background-image: url("../img/trash.png");
+  padding: 1em;
+}
+
+label.form-control-feedback {
+  position: relative;
+  width: auto;
+}
+
+.form-group {
+  text-align: center;
+}
+
+.submit {
+  position: relative;
+  left: 33%;
+  margin-bottom: 1em;
+  font-weight: 700;
+  border-width: .2em;
+  border-style: outset;
+  border-color: buttonface;
+  padding: .5em 1em .5em;
+  background-color: pink;
+}
+
+input {
+  padding: .3em;
+}
+
+.submit:hover {
+  background-color: red;
+}
+
+#trashBurger img {
+	padding-right:5em;
+}
+
+.devour-burger {
+	background-color: pink;
+  float: right;
+  padding: 0 2em;
+  margin-top: 2em;
+  margin-right: 4em;
+}
+
+.devour-burger:hover {
+   background-color: red;
+}
+
+h1 {
+	text-align: center;
+  background-color: #eccf98;
+  padding: .75em;
+}
+
+h2 {
+  text-align: center;
+  background-color: #eccf98;
+  border-radius: 5em;
+  padding: .25em;
+}
+
+ul {
+	list-style-type: none;
+}

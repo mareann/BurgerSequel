@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--  
+      main.handlebars
+
+      main layout
+      
+	  burger app 
+	  Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
+
+	  Burger logger with MySQL, Node, Express, Handlebars, Bootstrap and a homemade ORM
+	   	  
+	  * Whenever a user submits a burger's name, your app will display the burger on the left side of the page
+	  waiting to be devoured.
+
+	  * Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
+
+      The app will store every burger in a database, whether devoured or not.
+          
+      Author: Maryann Jordan 2018
+	-->
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
+	<title>Eat-Da-Burger!</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/assets/js/burgers.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	
+	<body>
+		{{{ body }}}
+	</body>
+
+</html>
