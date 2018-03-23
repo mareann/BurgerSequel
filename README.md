@@ -19,7 +19,7 @@
 * The app stores every burger in a database, whether devoured or not.
           
 ##### Below is a sample screen
-![screen](burger_screen.jpg)
+![screen](assets/img/burger_screen.jpg)
 
 #### Directory structure
 
@@ -27,32 +27,31 @@ Files and directories structure:
 
 ```
 .
-??? config
-?   == config.json
-? 
-??? controllers
-?    burgers_controller.js
-?
-??? db
-?    schema.sql
-? 
-?
-??? models
-?    burger.js
-?    index.js
-? 
-??? node_modules
-? 
-??? package.json
-?
-??? public
-?    assets
-?      css
-?       burger_style.css
-?         img
-?            burger.png
-?            burgerSmall.png
-?            chef.png
-?            trash.png
-?
-??? server.js
+= config
+=   config.json
+= 
+= controllers
+=   burgers_controller.js
+=
+= db
+=   schema.sql
+= 
+= models
+=   burger.js
+=   index.js
+= 
+= node_modules
+= 
+= package.json
+=
+=  public
+=    assets
+=      css
+=        burger_style.css
+=      img
+=            burger.png
+=            burgerSmall.png
+=            chef.png
+=            trash.png
+=            burger_screen.jpg
+= server.js
