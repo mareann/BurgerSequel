@@ -19,7 +19,7 @@
 * The app stores every burger in a database, whether devoured or not.
           
 ##### Below is a sample screen
-![screen](assets/img/burger_screen.jpg)
+![screen](public/assets/img/burger_screen.jpg)
 
 #### Directory structure
 
