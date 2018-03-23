@@ -1,6 +1,6 @@
 # burger
 
-# burger logger app utilizing MySQL, Node, Express, Handlebars, Bootstrap and a homemade ORM
+# burger logger app utilizing MySQL, Node, Express, Handlebars, Bootstrap and sequelize
 
 * Uses the MVC design pattern for files
 * uses Node and MySQL to query and route data in the app 
