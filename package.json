@@ -1,27 +1,29 @@
 {
-  "name": "burger",
+  "name": "burgerSequel",
   "version": "1.0.0",
-  "description": "burger logger with MySQL, Node, Express, Handlebars and a homemade ORM",
+  "description": "burger logger with Sequelize, MySQL, Node, Express, Handlebars",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mareann/burger.git"
+    "url": "git+https://github.com/mareann/burgerSequel.git"
   },
   "author": "maryann jordan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mareann/burger/issues"
+    "url": "https://github.com/mareann/burgerSequel/issues"
   },
-  "homepage": "https://github.com/mareann/burger#readme",
+  "homepage": "https://github.com/mareann/burgerSequel#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "mysql": "^2.15.0",
-    "path": "^0.12.7"
+    "mysql2": "^1.5.3",
+    "path": "^0.12.7",
+    "sequelize": "^4.37.2"
   },
   "devDependencies": {
     "handlebars-helper-css": "^0.1.0"

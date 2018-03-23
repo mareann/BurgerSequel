@@ -1,32 +1,82 @@
 /////////////////////////////////////////////////////////
 // controllers/ burgers_controller.js
-// routers retrieve data from database and render it to page
-// exports router
+// apps retrieve data from database and render it to page
+// exports app
 // requires express and models/burger.js
 ///////////////////////////////////////////////////////////
 
-var express = require("express");
-
-var router = express.Router();
-
+//var express = require("express");
+// var app = express.App();
+var path = require("path");
 // Import the model (burger.js) to use its database functions.
-var burger = require("../models/burger.js");
+var db = require("../models");
 
+//var db = require("models")(app);
+
+// Extracts the sequelize connection from the models object
+//var sequelizeConnection = db.sequelize;
+
+// Sync the tables
+//sequelizeConnection.sync();
+
+//console.log("db "+db)
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-  console.log("-------------controller: router.get / burger.selectAll render index");
-  burger.selectAll(function(data) {
+module.exports = function(app) {
+
+// Create routes
+// ----------------------------------------------------
+
+  app.get("/", function(req, res) {
+console.log("--controller: app.get / burger.findAll render index");
+ //  var Burger = require('../models/burger.js')(app)
+  db.Burger.findAll({}).then(function(data) {
     var hbsObject = {
       burgers: data
     };
-//  console.log("controller: router.get / res.render index hbsObject "+JSON.stringify(hbsObject));
+  console.log("controller: app.get / res.render index hbsObject "+JSON.stringify(hbsObject));
     res.render("index", hbsObject);
   });
 });
 
+// Index Redirect
+//app.get('/', function (req, res) {
+//  res.redirect('/index');
+//});
+//}
 
-router.post("/api/burgers", function(req, res) {
-console.log("-------------controller: router.post /api/burgers burger.insertOne");
+// Post request to add the new burger
+app.post("/api/burgers", function(req, res) {
+
+  db.Burger.create({
+    burger_name: req.body.burger_name,
+    devoured: req.body.devoured
+  })
+  .then(function(data) {
+    //prints [object SequelizeInstance:Burger]
+    console.log("post data "+JSON.stringify(data))
+    res.json(data);
+  });
+});
+
+
+app.put("/api/burgers/:id", function(req, res) {
+
+  db.Burger.update({
+    devoured: req.body.devoured
+    }, {
+    where: {
+      id: req.params.id
+    }
+}).then(function(data) {
+  console.log("put id "+req.params.id+"data "+data)
+  res.json(data);
+  });
+});
+
+}
+/*
+app.post("/api/burgers", function(req, res) {
+console.log("-------------controller: app.post /api/burgers burger.insertOne");
   burger.insertOne(
   	["burger_name", "devoured"], 
     [req.body.burger_name, req.body.devoured], function(result) {
@@ -37,11 +87,11 @@ console.log("controller: send back res.json "+result.insertId)
 });
 
 
-router.put("/api/burgers/:id", function(req, res) {
-    console.log("------------controller: router.put /api/burgers:id "+req.params.id);
+app.put("/api/burgers/:id", function(req, res) {
+    console.log("------------controller: app.put /api/burgers:id "+req.params.id);
   var condition = "id = " + req.params.id;
 
-  //console.log("controller: router.put /api/burgers update devoured ", condition);
+  //console.log("controller: app.put /api/burgers update devoured ", condition);
 
   burger.updateOne({
     devoured: req.body.devoured
@@ -56,5 +106,6 @@ router.put("/api/burgers/:id", function(req, res) {
     }
   });
 });
+*/
 
-module.exports = router;
+//module.exports = app;
